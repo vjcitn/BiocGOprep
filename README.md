@@ -81,4 +81,4 @@ python -m pytest tests/ -v --obo /path/to/go.obo
 
 ## License
 
-MIT
+Apache 2.0
