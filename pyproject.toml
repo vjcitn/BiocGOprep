@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "go-ontology-tools"
+version = "0.1.0"
+description = "Build SQLite or Parquet datasets from a Gene Ontology OBO file"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+
+dependencies = []          # stdlib only for the SQLite builder
+
+[project.optional-dependencies]
+parquet = ["pyarrow>=14.0"]
+test    = ["pytest>=7.0", "pyarrow>=14.0"]
+
+[project.scripts]
+go-build-db      = "go_ontology.build_db:main"
+go-build-parquet = "go_ontology.build_parquet:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["go_ontology*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,4 @@
+# Convenience file — identical to the [test] extra in pyproject.toml.
+# Use when you prefer pip install -r over pip install -e ".[test]".
+pytest>=7.0
+pyarrow>=14.0
