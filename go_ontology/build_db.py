@@ -110,7 +110,8 @@ def transitive_closure(direct_edges: dict[str, list[str]]) -> list[tuple[str, st
             if node in visited:
                 continue
             visited.add(node)
-            pairs.append((ancestor, node))
+            if node != ancestor:  # Prevent self-loops even if graph has cycles
+                pairs.append((ancestor, node))
             queue.extend(children.get(node, []))
     return pairs
 

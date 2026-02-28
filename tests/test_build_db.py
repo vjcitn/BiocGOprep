@@ -600,8 +600,12 @@ class TestBuildFullObo:
         """) == 0
 
     def test_relationship_types_sensible(self):
-        known = {"is_a","part_of","regulates","positively_regulates",
-                 "negatively_regulates","occurs_in","has_part"}
+        # Common GO relationship types as of 2025. This set may need updating
+        # as the GO specification evolves and new relationship types are added.
+        known = {"is_a", "part_of", "regulates",
+                 "positively_regulates", "negatively_regulates",
+                 "occurs_in", "has_part",
+                 "happens_during", "ends_during"}
         for table in ("go_bp_parents", "go_mf_parents", "go_cc_parents"):
             types_in_db = {
                 r[0] for r in self._rows(f"SELECT DISTINCT relationship_type FROM {table}")
