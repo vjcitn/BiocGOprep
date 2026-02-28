@@ -1,8 +1,19 @@
-# go-ontology-tools
+# BiocGOprep/go-ontology-tools
 
-Parse the [Gene Ontology](http://geneontology.org/) OBO file and build either
+This software was developed primarily by Claude, with prompting and
+revisions by Vince Carey.  The purpose of this work is to factor the production
+of Bioconductor's GO.db AnnotationPackage away from the BioconductorAnnotationPipeline
+system.
+
+
+Main objective: Parse the [Gene Ontology](http://geneontology.org/) OBO file and build either
 a **SQLite** database or a directory of **Parquet** files, using `go_id` as
 the natural primary/foreign key throughout — no surrogate integers.
+
+Python tooling is used to help create this Bioconductor resource
+at this time.  A benefit is direct usage of the [hypothesis](https://hypothesis.readthedocs.io/en/latest/)
+property-based testing system, applied to (admittedly simple) graph operations used to build the database tables.
+
 
 ## Outputs
 
