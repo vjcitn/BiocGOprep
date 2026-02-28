@@ -2,7 +2,4 @@
 # Use when you prefer pip install -r over pip install -e ".[test]".
 pytest>=7.0
 pyarrow>=14.0
-hypothesis
-typing
-copy
-collections
+hypothesis==6.151.9

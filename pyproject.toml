@@ -14,7 +14,7 @@ dependencies = []          # stdlib only for the SQLite builder
 
 [project.optional-dependencies]
 parquet = ["pyarrow>=14.0"]
-test    = ["pytest>=7.0", "pyarrow>=14.0", "hypothesis", "typing", "collections", "copy"]
+test    = ["pytest>=7.0", "pyarrow>=14.0", "hypothesis==6.151.9"]
 
 [project.scripts]
 go-build-db      = "go_ontology.build_db:main"
