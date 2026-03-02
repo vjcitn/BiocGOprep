@@ -17,6 +17,13 @@ property-based testing system, applied to (admittedly simple) graph operations u
 The prompting that produced this software used the outputs of `.schema` applied
 to the SQLite database in inst/extdata/GO.sqlite in the GO.db package of Bioc 3.22.
 
+Note that the tables produced here typically include more content than is
+offered in the GO.db environments like GOCCANCESTOR.  Note in particular that
+it appears that relationships now known as `part_of` were included in GOCCANCESTOR,
+although the basic source code for parsing go.obo in the legacy pipeline seems
+to have used only `is_a` relationships.  However, the schema and this code
+base did not explicitly define an ANCESTOR resource.  That computation is kept
+separate in the GO.db3 package under development.
 
 ## Outputs
 
