@@ -14,6 +14,9 @@ Python tooling is used to help create this Bioconductor resource
 at this time.  A benefit is direct usage of the [hypothesis](https://hypothesis.readthedocs.io/en/latest/)
 property-based testing system, applied to (admittedly simple) graph operations used to build the database tables.
 
+The prompting that produced this software used the outputs of `.schema` applied
+to the SQLite database in inst/extdata/GO.sqlite in the GO.db package of Bioc 3.22.
+
 
 ## Outputs
 
